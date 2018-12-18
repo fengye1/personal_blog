@@ -1,5 +1,6 @@
-# coding=utf8
 
-from personal_blog.schemas.base import ma
 
-__all__ = ['ma']
+import graphene
+from personal_blog.queries import RootQuery
+
+schema = graphene.Schema(query=RootQuery)

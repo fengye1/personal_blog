@@ -12,7 +12,8 @@ click = "*"
 flask-sqlalchemy = "*"
 sqlalchemy = "*"
 flask-migrate = "*"
-flask-marshmallow = "*"
+graphene-sqlalchemy = "*"
+flask-graphql = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"

@@ -12,8 +12,8 @@ class Article(Base):
     """
     __tablename__ = "article"
 
-    category_id = SA.Column(BIGINT(unsigned=True), SA.ForeignKey('category.id'))
-    creator_id = SA.Column(BIGINT(unsigned=True), SA.ForeignKey('account.id'))
+    category_id = SA.Column(BIGINT(unsigned=True))
+    creator_id = SA.Column(BIGINT(unsigned=True))
     title = SA.Column(String(128))
     content = SA.Column(TEXT)
 

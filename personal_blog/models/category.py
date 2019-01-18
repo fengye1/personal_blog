@@ -16,4 +16,3 @@ class Category(Base):
     label = SA.Column(String(32))
     position = SA.Column(INTEGER, default=1, autoincrement=True)
     is_show = SA.Column(BOOLEAN, default=True)
-    articles = relationship("Article", backref='category', cascade="all, delete")

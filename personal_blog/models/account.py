@@ -4,11 +4,12 @@ import sqlalchemy as SA
 from sqlalchemy.types import String, BOOLEAN
 from personal_blog.models.base import Base
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from personal_blog.models.article import Article
 
 class Account(Base):
     """账户表"""
     __tablename__ = 'account'
+    id = SA.Column(BIGINT(unsigned=True), autoincrement=True, primary_key=True)
     name = SA.Column(String(32))
     email = SA.Column(String(32))
     pw_hash = SA.Column(String(128))

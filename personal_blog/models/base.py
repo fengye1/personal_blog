@@ -12,7 +12,6 @@ from sqlalchemy.dialects.mysql import BIGINT
 
 
 class tBase(object):
-    id = SA.Column(BIGINT(unsigned=True), autoincrement=True, primary_key=True)
     created_date = SA.Column(SA.DateTime, default=datetime.datetime.now)
     modified_date = SA.Column(SA.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now)
 

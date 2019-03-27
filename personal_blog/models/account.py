@@ -2,9 +2,10 @@
 
 import sqlalchemy as SA
 from sqlalchemy.types import String, BOOLEAN
+from sqlalchemy.dialects.mysql import BIGINT
 from personal_blog.models.base import Base
 from werkzeug.security import generate_password_hash, check_password_hash
-from personal_blog.models.article import Article
+
 
 class Account(Base):
     """账户表"""

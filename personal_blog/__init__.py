@@ -4,7 +4,7 @@ from flask import Flask
 from personal_blog import views
 from personal_blog.config import setting
 from personal_blog.models.base import db
-from personal_blog.schemas.base import ma
+
 from flask_migrate import Migrate
 BLUEPRINTS = [
     (views.account_bp, '/account')
@@ -34,5 +34,4 @@ def configure_db(app):
     db.init_app(app)
     # Migrate
     Migrate(app, db)
-    # Marshmallow
-    ma.init_app(app)
+

@@ -4,6 +4,10 @@
 启动 Python:
 > FLASK_APP=personal_blog FLASK_ENV=development flask run
 
+windows 启动
+> set Flask_APP=personal_blog & set  FLASK_ENV=development &set FLASK_DEBUG=1 & flask run
+
+
 效果预览:
 用浏览器打开： http://localhost:5000[http://localhost:5000]
 

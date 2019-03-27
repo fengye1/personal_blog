@@ -1,6 +1,19 @@
-
-
+# from graphene import ObjectType, relay
 import graphene
-from personal_blog.queries import RootQuery
 
-schema = graphene.Schema(query=RootQuery)
+
+# class Query(graphene.ObjectType):
+#     node = relay.Node.Field()
+
+
+# schema = graphene.Schema(query=Query)
+
+class Query(graphene.ObjectType):
+    hello = graphene.String(argument=graphene.String(default_value="stranger"))
+
+    def resolve_hello(self, info, argument):
+        return 'Hello ' + argument
+
+
+schema = graphene.Schema(query=Query)
+

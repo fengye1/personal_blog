@@ -12,7 +12,6 @@ from sqlalchemy.dialects.mysql import BIGINT
 
 
 class tBase(object):
-
     created_date = SA.Column(SA.DateTime, default=datetime.datetime.now)
     modified_date = SA.Column(SA.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now)
 

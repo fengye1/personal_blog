@@ -1,1 +1,4 @@
 # coding=utf8
+
+
+SQLALCHEMY_TRACK_MODIFICATIONS = True

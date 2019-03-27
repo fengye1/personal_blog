@@ -1,5 +1,5 @@
 import graphene
-from graphene import  Field
+from graphene import Field
 from personal_blog.types.account import Account
 from graphene_sqlalchemy import SQLAlchemyObjectType, SQLAlchemyConnectionField
 

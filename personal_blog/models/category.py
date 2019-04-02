@@ -1,8 +1,7 @@
 # coding=utf8
 import sqlalchemy as SA
 from sqlalchemy.dialects.mysql import BIGINT, INTEGER, BOOLEAN
-from sqlalchemy.types import String
-
+from sqlalchemy.types import String, TEXT
 from personal_blog.models.base import Base
 
 
@@ -13,5 +12,6 @@ class Category(Base):
     __tablename__ = 'category'
     id = SA.Column(BIGINT(unsigned=True), autoincrement=True, primary_key=True)
     label = SA.Column(String(32))
+    desc = SA.Column(TEXT)
     position = SA.Column(INTEGER, default=1, autoincrement=True)
     is_show = SA.Column(BOOLEAN, default=True)

@@ -4,7 +4,7 @@ from personal_blog.types.category import Category
 from graphene_sqlalchemy import SQLAlchemyConnectionField
 
 
-class AccountQuery(graphene.ObjectType):
+class CategoryQuery(graphene.ObjectType):
     category = Field(Category, description="分类")
     categories = SQLAlchemyConnectionField(Category, description="分类列表")
 

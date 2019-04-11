@@ -44,3 +44,4 @@ class Login(Mutation):
 
 class AccountMutation(ObjectType):
     login = Login.Field(description="账户登录")
+  

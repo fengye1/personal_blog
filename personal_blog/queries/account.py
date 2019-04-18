@@ -12,5 +12,5 @@ class AccountQuery(graphene.ObjectType):
     def resolve_current_user(self, info):
         return Account.get_query(info).first()
 
-    def resolve_users(self,info, args):
+    def resolve_users(self,info, *args):
         return Account.get_query(info)

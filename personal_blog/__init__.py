@@ -10,6 +10,8 @@ from personal_blog.models.base import db
 from personal_blog.schemas import schema
 from personal_blog import views
 from personal_blog.commands.initdata import initdata_cli
+from flask_cors import CORS
+
 
 BLUEPRINTS = [
     (views.frontend_bp, '/'),
@@ -26,6 +28,7 @@ def create_app():
     configure_graphql(app)
     configure_db(app)
     configure_commands(app, COMMANDS)
+    CORS(app)
     return app
 
 

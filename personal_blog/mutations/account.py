@@ -34,7 +34,7 @@ class Login(Mutation):
     def mutate(self, info, email, password):
         user = AccountModel.query.filter(AccountModel.email == email).first()
         if not user:
-            return Login(code=400, message="用户没有登录", success=False)
+            return Login(code=400, message="没有该用户", success=False)
         if user.check_password(password):
             access_token = create_access_token(identity=user.id)
             return Login(access_token=access_token)

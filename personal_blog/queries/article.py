@@ -11,5 +11,5 @@ class ArticleQuery(graphene.ObjectType):
     def resolve_article(self, info):
         return Article.get_query(info).first()
 
-    def resolve_articles(self, info, args):
+    def resolve_articles(self, info, *args):
         return Article.get_query(info)

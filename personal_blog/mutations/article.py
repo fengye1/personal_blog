@@ -1,4 +1,3 @@
-
 # coding=utf8
 
 from graphene import Mutation, String, ObjectType, Field
@@ -20,13 +19,14 @@ class AddOrUpdateArticle(Mutation):
         category_id = String(description="所属分类id", required=True)
         content = String(description="内容")
 
-    article = Field(Article, description="添加文章")
+    # article = Field(Article, description="添加文章")
 
-    @jwt_required
-    def mutate(self, info, title, category_id, content, id=None):
-        article = dao_article.updateArticle(title,content,category_id,id)
+    # @jwt_required
+    def mutate(self, info, title, content,category_id, id=None):
+        print("===========>", title, content, category_id, id)
+        article = dao_article.update_article(title, content, category_id, id)
         if article:
-            return AddOrUpdateArticle(article)
+            return AddOrUpdateArticle()
         else:
             return AddOrUpdateArticle(code=400, message="标题不能重复", success=False)
 
@@ -40,14 +40,10 @@ class DeleteArticle(Mutation):
 
     @jwt_required
     def mutate(self, info, id):
-        dao_article.deleteArticle()
+        dao_article.delete_article()
         return DeleteArticle()
-
-
-
 
 
 class ArticleMutation(ObjectType):
     article_edit = AddOrUpdateArticle.Field(description="文章创建或更新")
     article_delete = DeleteArticle.Field(description="文章删除")
-
